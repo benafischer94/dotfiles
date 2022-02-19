@@ -28,3 +28,9 @@ fi
 
 # Oh-My-Posh theme
 eval "$(oh-my-posh --init --shell bash --config  ~/.poshthemes/bfischer.omp.json)"
+
+# Rust
+. "$HOME/.cargo/env"
+
+# lsdhcp Router OS script
+alias lsdhcp='~/dhcp.sh'
