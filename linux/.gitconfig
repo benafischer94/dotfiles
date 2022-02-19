@@ -1,3 +1,5 @@
 [user]
 	email = bfischer@outlook.com
 	name = Benjamin Fischer
+[init]
+	defaultBranch = main
