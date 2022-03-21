@@ -34,3 +34,6 @@ eval "$(oh-my-posh --init --shell bash --config  ~/.poshthemes/bfischer.omp.json
 
 # lsdhcp Router OS script
 alias lsdhcp='~/dhcp.sh'
+
+# New VM relies on vmware being available and all the govc goodness.
+alias newvm='function _(){ pushd /mnt/c/Users/benfi/Programming/vmware > /dev/null; ./vm.sh -e $1 -n $2; popd > /dev/null;}; _'
