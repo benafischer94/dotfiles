@@ -40,8 +40,8 @@
           "type": "git"
         },
         {
-          "background": "#00f2c3",
-          "foreground": "#ffffff",
+          "background": "p:success",
+          "foreground": "P:gray-900",
           "leading_diamond": "\ue0c7",
           "properties": {
             "paused_icon": "\uf8e3 ",
@@ -69,8 +69,8 @@
           "type": "python"
         },
         {
-          "background": "#1d8cf8",
-          "foreground": "#ffffff",
+          "background": "p:teal",
+          "foreground": "p:white",
           "leading_diamond": "\ue0c7",
           "powerline_symbol": "\ue0b0",
           "style": "diamond",

@@ -40,6 +40,7 @@ sudo apt-get install ansible nmap python3-venv python3-pip yarn npm -y >/dev/nul
 echo "Terraforming"
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - >/dev/null
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" >/dev/null
+sudo apt-get install terraform
 
 # Ansible
 echo "Some basic ansible needfuls"
