@@ -36,6 +36,16 @@ sudo ln -sf /usr/bin/python3 /usr/bin/python
 echo "Fetching Ansible, NMAP, VENV, PIP, Yarn, and NPM"
 sudo apt-get install ansible nmap python3-venv python3-pip yarn npm -y >/dev/null
 
+# GoGo Gadget Ranger! (GoVC CLI)
+echo "Fetching GOVC"
+mkdir /tmp/govc > /dev/null
+pushd /tmp/govc
+curl -L -C - https://github.com/vmware/govmomi/releases/latest/download/govc_Linux_x86_64.tar.gz --output govc.tar.gz
+tar xvf ./govc.tar.gz
+sudo mv govc /usr/local/bin/govc > /dev/null
+popd
+rm -rf /tmp/govc
+
 # Terraform
 echo "Terraforming"
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - >/dev/null
