@@ -13,6 +13,9 @@ cat "$PWD/.gitconfig" > $HOME/.gitconfig
 echo "SSH Config"
 sudo chmod 644 "$PWD/ssh_bfischer.conf"
 sudo ln -s -f "$PWD/ssh_bfischer.conf" /etc/ssh/ssh_config.d/bfischer.conf
+if ! [ -d "$HOME/.ssh" ] ; then
+    mkdir $HOME/.ssh > /dev/null
+fi
 
 # Oh my posh!
 echo "Pulling Posh!"
