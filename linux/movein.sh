@@ -10,6 +10,10 @@ ln -s -f "$PWD/scripts/" $HOME/scripts
 echo "Git config"
 cat "$PWD/.gitconfig" > $HOME/.gitconfig
 
+echo "SSH Config"
+sudo chmod 644 "$PWD/ssh_bfischer.conf"
+sudo ln -s -f "$PWD/ssh_bfischer.conf" /etc/ssh/ssh_config.d/bfischer.conf
+
 # Oh my posh!
 echo "Pulling Posh!"
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh >/dev/null
