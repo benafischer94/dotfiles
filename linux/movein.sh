@@ -78,11 +78,11 @@ sudo apt-get update >/dev/null
 sudo apt-get install azure-cli >/dev/null
 
 # If supporting plantUML
-sudo apt-get install default-jre graphviz
+sudo apt-get install default-jre graphviz > /dev/null
 # ToDo, follow redirect for: https://github.com/plantuml/plantuml/releases/latest to page, parse
 # out last part of URL, and then download:
 sudo wget https://github.com/plantuml/plantuml/releases/download/v1.2022.4/plantuml-1.2022.4.jar -O /usr/local/bin/plantuml.jar > /dev/null
-sudo chmod +x /usr/loca/bin/plantuml.jar > /dev/null
+sudo chmod +x /usr/local/bin/plantuml.jar > /dev/null
 
 # Activate the new profile
 echo "Don't forget to source $HOME/.profile"
