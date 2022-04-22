@@ -10,6 +10,10 @@ ln -s -f "$PWD/scripts/" $HOME/scripts
 echo "Git config"
 cat "$PWD/.gitconfig" > $HOME/.gitconfig
 
+echo "SSH Config"
+sudo chmod 644 "$PWD/ssh_bfischer.conf"
+sudo ln -s -f "$PWD/ssh_bfischer.conf" /etc/ssh/ssh_config.d/bfischer.conf
+
 # Oh my posh!
 echo "Pulling Posh!"
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh >/dev/null
@@ -35,6 +39,16 @@ sudo ln -sf /usr/bin/python3 /usr/bin/python
 # Needful downloads
 echo "Fetching Ansible, NMAP, VENV, PIP, Yarn, and NPM"
 sudo apt-get install ansible nmap python3-venv python3-pip yarn npm -y >/dev/null
+
+# GoGo Gadget Ranger! (GoVC CLI)
+echo "Fetching GOVC"
+mkdir /tmp/govc > /dev/null
+pushd /tmp/govc
+curl -L -C - https://github.com/vmware/govmomi/releases/latest/download/govc_Linux_x86_64.tar.gz --output govc.tar.gz
+tar xvf ./govc.tar.gz
+sudo mv govc /usr/local/bin/govc > /dev/null
+popd
+rm -rf /tmp/govc
 
 # Terraform
 echo "Terraforming"
