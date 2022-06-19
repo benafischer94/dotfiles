@@ -39,3 +39,6 @@ alias lsdhcp='~/dhcp.sh'
 alias newvm='function _(){ pushd /mnt/c/Users/benfi/Programming/vmware > /dev/null; ./vm.sh -e $1 -n $2; popd > /dev/null;}; _'
 
 alias winhome='cd /mnt/c/Users/benfi/'
+
+# GoLang
+export PATH=$PATH:/usr/local/bin/go/bin

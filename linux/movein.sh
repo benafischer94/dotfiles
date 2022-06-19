@@ -43,6 +43,32 @@ sudo ln -sf /usr/bin/python3 /usr/bin/python
 echo "Fetching Ansible, NMAP, VENV, PIP, Yarn, and NPM"
 sudo apt-get install ansible nmap python3-venv python3-pip yarn npm -y >/dev/null
 
+# Setup GoLang
+# Need to do checking to see if Go is already installed, if it is, then version check
+# If older remove, then update.
+# Need to find a symlink to latest GO binary package as well.
+echo "Setting up GoLang"
+mkdir /tmp/go/ > /dev/null
+pushd /tmp/go > /dev/null
+curl -L -C - https://go.dev/dl/go1.18.3.linux-amd64.tar.gz --output go.tar.gz
+tar xvf ./go.tar.gz > /dev/null
+sudo mv ./go /usr/local/bin/go > /dev/null
+popd > /dev/null
+rm -rf /tmp/go
+
+
+# Hugo Setup
+echo "Fetching Hugo"
+mkdir /tmp/hugo > /dev/null
+pushd /tmp/hugo > /dev/null
+git clone https://github.com/gohugoio/hugo.git
+cd hugo > /dev/null
+go install --tags extended > /dev/null
+cd .. > /dev/null
+sudo mv hugo /usr/local/bin/hugo > /dev/null
+popd > /dev/null
+rm -rf /tmp/hugo > /dev/null
+
 # GoGo Gadget Ranger! (GoVC CLI)
 echo "Fetching GOVC"
 mkdir /tmp/govc > /dev/null
