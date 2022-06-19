@@ -41,7 +41,7 @@ sudo ln -sf /usr/bin/python3 /usr/bin/python
 
 # Needful downloads
 echo "Fetching Ansible, NMAP, VENV, PIP, Yarn, and NPM"
-sudo apt-get install ansible nmap python3-venv python3-pip yarn npm -y >/dev/null
+sudo apt-get install jq ansible nmap python3-venv python3-pip yarn npm -y >/dev/null
 
 # Setup GoLang
 # Need to do checking to see if Go is already installed, if it is, then version check
@@ -56,15 +56,12 @@ sudo mv ./go /usr/local/bin/go > /dev/null
 popd > /dev/null
 rm -rf /tmp/go
 
-
 # Hugo Setup
 echo "Fetching Hugo"
-mkdir /tmp/hugo > /dev/null
-pushd /tmp/hugo > /dev/null
-git clone https://github.com/gohugoio/hugo.git
-cd hugo > /dev/null
-go install --tags extended > /dev/null
-cd .. > /dev/null
+mkdir /tmp/hugo
+pushd /tmp/hugo
+curl -L $(curl --silent https://api.github.com/repos/gohugoio/hugo/releases/latest | jq  '.assets[] | select(.name|contains("hugo_extended"))|select(.name|contains("Linux-64bit.tar.gz"))|.browser_download_url'| tr -d \") --output hugo.tar.gz
+tar xvf ./hugo.tar.gz
 sudo mv hugo /usr/local/bin/hugo > /dev/null
 popd > /dev/null
 rm -rf /tmp/hugo > /dev/null
