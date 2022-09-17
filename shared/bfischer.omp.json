@@ -40,7 +40,7 @@
           "type": "git"
         },
         {
-          "background": "p:success",
+          "background": "p:green",
           "foreground": "P:gray-900",
           "leading_diamond": "\ue0c7",
           "properties": {
