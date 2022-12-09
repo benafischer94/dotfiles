@@ -45,3 +45,6 @@ export PATH=$PATH:/usr/local/bin/go/bin
 
 # Julia Lag
 export PATH="$PATH:/usr/local/bin/julia/bin"
+
+# Sonar Scanner
+export PATH="$PATH:/usr/local/bin/sonar-scanner/bin"
