@@ -42,3 +42,6 @@ alias winhome='cd /mnt/c/Users/benfi/'
 
 # GoLang
 export PATH=$PATH:/usr/local/bin/go/bin
+
+# Julia Lag
+export PATH="$PATH:/usr/local/bin/julia/bin"

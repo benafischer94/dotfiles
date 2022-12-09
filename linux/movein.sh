@@ -56,6 +56,9 @@ sudo mv ./go /usr/local/bin/go > /dev/null
 popd > /dev/null
 rm -rf /tmp/go
 
+# Setup Julia Lang
+/bin/bash ./scripts/julia.sh
+
 # Hugo Setup
 echo "Fetching Hugo"
 mkdir /tmp/hugo
