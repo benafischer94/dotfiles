@@ -1,6 +1,8 @@
 #Basic Powershell Setup
 Set-ExecutionPolicy -Scope CurrentUser AllSigned
 
+#Install GIT
+winget install --id Git.Git -e --source winget
 #Install Power VMWare Power CLI
 Find-module -Name VMware.PowerCLI -y
 #(Y) to install the NuGet module
