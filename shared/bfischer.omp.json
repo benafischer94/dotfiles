@@ -1,103 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "blocks": [
-    {
-      "alignment": "left",
-      "segments": [
-        {
-          "background": "#344675",
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
-          "style": "diamond",
-          "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "session"
-        },
-        {
-          "background": "#e14eca",
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0c7",
-          "properties": {
-            "style": "folder"
-          },
-          "style": "diamond",
-          "template": " \ue5ff {{ .Path }} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "path"
-        },
-        {
-          "background": "#1d8cf8",
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0c7",
-          "properties": {
-            "branch_icon": "\ue0a0",
-            "fetch_status": true,
-            "fetch_upstream_icon": true
-          },
-          "style": "diamond",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "git"
-        },
-        {
-          "background": "p:green",
-          "foreground": "P:gray-900",
-          "leading_diamond": "\ue0c7",
-          "properties": {
-            "paused_icon": "\uf8e3 ",
-            "playing_icon": "\ue602 ",
-            "stopped_icon": "\uf04d ",
-            "track_separator": " - "
-          },
-          "style": "diamond",
-          "template": " \uf9c6 {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "spotify"
-        },
-        {
-          "background": "#ff8d72",
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0c7",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "fetch_version": true,
-            "fetch_virtual_env": true
-          },
-          "style": "diamond",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "python"
-        },
-        {
-          "background": "p:teal",
-          "foreground": "p:white",
-          "leading_diamond": "\ue0c7",
-          "powerline_symbol": "\ue0b0",
-          "style": "diamond",
-          "template": " {{.WorkspaceName}} ",
-          "trailing_diamond": "\ue0c6",
-          "type": "terraform"
-        },
-        {
-          "background": "#fd5d93",
-          "background_templates": [
-            "{{ if gt .Code 0 }#d14271{{ end }}"
-          ],
-          "foreground": "#ffffff",
-          "leading_diamond": "\ue0c7",
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "diamond",
-          "template": " \uf31b ",
-          "trailing_diamond": "\ue0b4",
-          "type": "exit"
-        }
-      ],
-      "type": "prompt"
-    }
-  ],
-  "final_space": true,
   "palette": {
     "danger": "#fd5d93",
     "default": "#344675",
@@ -120,5 +22,103 @@
     "white": "#ffffff"
   },
   "terminal_background": "#525f7f",
-  "version": 2
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0c6",
+          "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }} ",
+          "foreground": "#ffffff",
+          "background": "#344675",
+          "type": "session",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "style": "folder"
+          },
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0c6",
+          "template": " \ue5ff {{ .Path }} ",
+          "foreground": "#ffffff",
+          "background": "#e14eca",
+          "type": "path",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "branch_icon": "\ue0a0",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0c6",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }} ",
+          "foreground": "#ffffff",
+          "background": "#1d8cf8",
+          "type": "git",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "paused_icon": "\uf8e3 ",
+            "playing_icon": "\ue602 ",
+            "stopped_icon": "\uf04d ",
+            "track_separator": " - "
+          },
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0c6",
+          "template": " \uf9c6 {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
+          "foreground": "P:gray-900",
+          "background": "p:green",
+          "type": "spotify",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "fetch_version": true,
+            "fetch_virtual_env": true
+          },
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0c6",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
+          "background": "#ff8d72",
+          "type": "python",
+          "style": "diamond"
+        },
+        {
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0c6",
+          "template": " {{.WorkspaceName}} ",
+          "foreground": "p:white",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:teal",
+          "type": "terraform",
+          "style": "diamond"
+        },
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "leading_diamond": "\ue0c7",
+          "trailing_diamond": "\ue0b4",
+          "template": " \uf31b ",
+          "foreground": "#ffffff",
+          "background": "#fd5d93",
+          "type": "exit",
+          "style": "diamond",
+          "background_templates": [
+            "{{ if gt .Code 0 }#d14271{{ end }}"
+          ]
+        }
+      ]
+    }
+  ],
+  "version": 3,
+  "final_space": true
 }
