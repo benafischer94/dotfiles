@@ -87,6 +87,7 @@ sudo apt-get install terraform
 
 # Ansible
 echo "Some basic ansible needfuls"
+ln -s -f "$PWD/.ansible.cfg" $HOME/.ansible.cfg
 ansible-galaxy install geerlingguy.postgresql robertdebock.rpmfusion > /dev/null
 ansible-galaxy collection install community.general >/dev/null
 
